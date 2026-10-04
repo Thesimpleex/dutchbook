@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dutchbook"
+version = "0.1.0"
+description = "Find the Dutch book in any set of probability forecasts over logically related events, price it exactly, and repair the forecasts so that no outcome's Brier score gets worse."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Alexander Majores" }]
+keywords = ["dutch book", "coherence", "probabilistic forecasting", "linear programming", "proper scoring rules", "bregman projection", "language models", "forecastbench"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8"]
+docs = ["matplotlib>=3.8", "playwright>=1.45"]
+dev = ["pytest>=8.0", "ruff>=0.6", "hypothesis>=6.100", "matplotlib>=3.8"]
+
+[project.urls]
+Homepage = "https://github.com/Thesimpleex/dutchbook"
+Issues = "https://github.com/Thesimpleex/dutchbook/issues"
+
+[project.scripts]
+dutchbook = "dutchbook.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dutchbook"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C4", "SIM", "NPY", "PT", "RUF"]
+# Logical symbols (∨, ∧, ¬, →) are the subject matter of the package, not typos.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/dutchbook/report.py" = ["E501"]  # inline CSS and HTML templates
+
+[tool.ruff.lint.isort]
+known-first-party = ["dutchbook"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = ["slow: long-running statistical tests"]

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "dutchbook: Dutch-book audit and accuracy-dominance repair for probability forecasts"
+authors:
+  - family-names: Majores
+    given-names: Alexander
+repository-code: "https://github.com/Thesimpleex/dutchbook"
+license: MIT
+version: 0.1.0
+date-released: "2026-10-04"
