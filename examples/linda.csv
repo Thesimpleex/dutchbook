@@ -1,0 +1,7 @@
+group,id,forecast
+typical respondent,feminist,0.90
+typical respondent,bank_teller,0.15
+typical respondent,feminist_bank_teller,0.35
+coherent respondent,feminist,0.90
+coherent respondent,bank_teller,0.15
+coherent respondent,feminist_bank_teller,0.12

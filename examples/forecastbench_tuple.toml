@@ -1,0 +1,15 @@
+# One combination tuple from ForecastBench (CC BY-SA 4.0, forecastbench.org).
+# Forecaster: GPT-4o (zero shot), round 2024-07-21; question texts from the question set.
+title = "ForecastBench combination tuple"
+
+[atoms]
+A = "Will the Houthi movement and Yemen reach a ceasefire that is in effect on 31 December 2024 and lasts at least six months?"
+B = "By 31 December 2024, will uranium enriched to 90% or more be discovered in an Iranian facility, according to the IAEA?"
+
+[formulas]
+A = "A"
+B = "B"
+A_and_B = "A & B"
+A_and_notB = "A & ~B"
+notA_and_B = "~A & B"
+notA_and_notB = "~A & ~B"

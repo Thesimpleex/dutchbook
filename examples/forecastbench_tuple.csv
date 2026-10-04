@@ -1,0 +1,7 @@
+id,forecast
+A,0.25
+B,0.35
+A_and_B,0.12
+A_and_notB,0.25
+notA_and_B,0.35
+notA_and_notB,0.72

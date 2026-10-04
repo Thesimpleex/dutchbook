@@ -1,0 +1,10 @@
+title = "The Linda problem"
+
+[atoms]
+F = "Linda is active in the feminist movement"
+B = "Linda is a bank teller"
+
+[formulas]
+feminist = "F"
+bank_teller = "B"
+feminist_bank_teller = "F & B"
